@@ -1,0 +1,35 @@
+FROM python:3.11-slim-bullseye
+
+# Install dependencies for ARM compatibility and Nicotine+
+RUN apt-get update && apt-get install -y \
+    git \
+    build-essential \
+    libglib2.0-dev \
+    libdbus-glib-1-dev \
+    libpulse-dev \
+    multiarch-support \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clone specific Nicotine+ release (3.3.0 for better JSON-RPC support)
+RUN git clone --branch 3.3.0 --depth 1 https://github.com/nicotine-plus/nicotine-plus.git /opt/nicotine-plus \
+    && cd /opt/nicotine-plus \
+    && python3 setup.py install \
+    && rm -rf /opt/nicotine-plus
+
+# Copy default config
+COPY config /config
+
+# Set environment variables
+ENV NICOTINE_DOWNLOAD_DIR=/downloads
+ENV NICOTINE_HOME=/config
+ENV PYTHONUNBUFFERED=1
+
+# Expose JSON-RPC port
+EXPOSE 5030
+
+# Healthcheck for JSON-RPC port
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s \
+    CMD curl --fail http://localhost:5030 || exit 1
+
+# Start Nicotine+ in headless mode with verbose logging
+CMD ["nicotine", "--headless", "--config", "/config/config", "--log-level", "debug"]

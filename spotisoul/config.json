@@ -1,0 +1,28 @@
+{
+  "Server": {
+    "login": "your_username",
+    "password": "your_password"
+  },
+  "RPC": {
+    "enabled": true,
+    "bind": "0.0.0.0",
+    "port": 5030,
+    "auth_token": "your_secure_token_12345"
+  },
+  "Downloads": {
+    "download_dir": "/downloads",
+    "incomplete_dir": "/downloads/incomplete"
+  },
+  "Searches": {
+    "max_results": 10,
+    "enable_filters": false
+  },
+  "Logging": {
+    "log_dir": "/config/logs",
+    "log_level": "debug"
+  },
+  "UI": {
+    "headless": true,
+    "enable_gui": false
+  }
+}
