@@ -1,14 +1,12 @@
 # nicotine_docker
 
-This folder contains the `nicotine_docker` project.
-
-> **Note**: This project was developed with assistance from AI tools (e.g., ChatGPT), but the architecture, intent, and integration were authored by me.
-
 ## Overview
-(Provide a brief summary of what this tool does.)
+This Docker build provides a Nicotine+ Soulseek client with JSON-RPC pre-enabled, suitable for integration with automation tools like Spotisoul.
 
 ## Setup
-(Instructions for setting up or building the tool.)
+1. Ensure Docker is installed.
+2. Build the image using `docker build -t nicotineplus .`.
+3. Run with the provided volume and port mappings.
 
 ## Usage
-(How to use the tool effectively.)
+Use this container for automated Soulseek downloading and control via RPC. Preconfigured for clean integration with Spotisoul.
