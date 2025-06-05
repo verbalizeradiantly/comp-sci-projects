@@ -1,14 +1,12 @@
 # routercleanse
 
-This folder contains the `routercleanse` project.
-
-> **Note**: This project was developed with assistance from AI tools (e.g., ChatGPT), but the architecture, intent, and integration were authored by me.
-
 ## Overview
-(Provide a brief summary of what this tool does.)
+RouterCleanse is a command-line tool that scans your local network and router for signs of malware, rogue devices, and unsafe open ports.
 
 ## Setup
-(Instructions for setting up or building the tool.)
+1. Clone the `routercleanse` directory.
+2. Run `pip install -r requirements.txt` if a `requirements.txt` is present.
+3. Start with `python routercleanse.py` or equivalent script.
 
 ## Usage
-(How to use the tool effectively.)
+The tool will map devices on your LAN, check router configuration (via known IPs or UPnP), and log issues to `router_logs/`.
