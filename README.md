@@ -11,5 +11,5 @@ Some of the included projects were developed with the help of tools like ChatGPT
 - MacCleanse Package (.app)
 - RouterCleanse
 - Nicotine+ Docker Image
-- Docker Stack (Media + Smart Home)
+- Docker Stack (Selfhosted Media Server)
 - Weather Program (no AI use)
