@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  nicotine:
+    build:
+      context: .
+      dockerfile: Dockerfile.nicotine_rpc
+    platform: linux/arm64
+    container_name: nicotine
+    volumes:
+      - ./config/nicotine:/config
+      - ./downloads:/downloads
+      - ./logs:/config/logs
+    environment:
+      - NICOTINE_HOME=/config
+      - NICOTINE_DOWNLOAD_DIR=/downloads
+    ports:
+      - "5030:5030"
+    networks:
+      - nicotine_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5030"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  nicotine_net:
+    driver: bridge
