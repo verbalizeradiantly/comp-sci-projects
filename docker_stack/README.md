@@ -1,4 +1,4 @@
-# docker_stack
+# mediaserver_docker_stack
 
 This folder contains the `media server docker_stack` project.
 
