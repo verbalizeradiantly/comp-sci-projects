@@ -1,6 +1,6 @@
 # docker_stack
 
-This folder contains the `docker_stack` project.
+This folder contains the `media server docker_stack` project.
 
 > **Note**: This project was developed with assistance from AI tools (e.g., ChatGPT), but the architecture, intent, and integration were authored by me.
 
