@@ -16,3 +16,17 @@ The next step will be to get my apple developer license so I can ensure root acc
 
 ## Usage
 MacCleanse will log system activity, highlight suspicious processes, and optionally perform cleanup tasks. Output is stored in `logs/`.
+
+## ⚠️ Compatibility Notice
+
+This version of **MacCleanse** is specifically tailored for an older Mac model and OS:
+
+- ✅ Tested on: macOS Sierra (ver. 10.13.6)
+- ✅ Hardware: Intel-based Mac (pre-2020)
+- ❌ Not guaranteed to work on Apple Silicon (M1/M2)
+- ❌ Not tested on macOS Big Sur or later
+
+A universal or updated build is planned for future versions.
+
+Please test cautiously and report issues via the GitHub Issues tab.
+ 
